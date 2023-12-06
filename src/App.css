@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@100;500&family=Poppins:wght@500;600;700;800&display=swap');
+
+:root{
+    --bg-container :#E5E4E2 ;
+    --color-fonts: white;
+    --weight-font-s:650 ;
+    --weight-font-m:780;
+    --white:white;
+    --bg-wrapper: #000000;
+    --font-text: 2.1rem;
+    --my-1:2rem ;
+    --mx-1:1.25rem;
+    --color-fonts-dark: #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container{
+    background-color: var(--white);
+    min-height: 100vh;  
+    display: flex;
+    align-items: center;
+    justify-content: center;  
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper{
+    background-color: #1E2952;
+    font-size: var(--font-text);
+    width: 550px;
+    height: 800px;
+    padding: var(--mx-1);
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form{
+    display: grid;
+    grid-template-columns: 400px 80px;
+}
+
+.header{
+    padding: 1.8rem;
+    text-align: center;
+    font-weight: var(--weight-font-s);
+    color: var(--color-fonts);
+}
+
+.task-input{
+    margin: 0 var(--mx-1);
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
+    padding: 0.6rem 0.4rem;
+    font-size: 1.35rem;
+}
+
+.button-add{
+    font-size: 1.35rem;
+    background-color: #AFDBF5;
+    border: none;
+    border-radius: 0.2rem; 
+    font-weight: var(--weight-font-s);
+    transition: .3s ;
+}
+
+.button-add:hover{
+    transition: .3s !important;
+    background-color: #AFDBF5;
+}
+
+.task-input:focus {   
+    border: 1.2px solid red;
+}
+
+.list-item{
+    background-color: none;
+    width: 95%;
+    padding: 0 0.8rem;
+    height: auto;
+    border-radius: 0.8rem;
+    border: 1px solid white;
+    background: #AFDBF5;
+    list-style: none;
+    margin: 0.7rem auto;
+    display: flex;
+    position: relative;    
+}
+
+.list{
+    font-size: 1.3rem;
+    width: 100%;	
+    background-color: #AFDBF5;
+    color: #000000;
+    padding: 1rem 0 ;
+    position: relative;
+    border: none;
+    outline: none;
+}
+    
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+}  
+
+.task-button{
+    position: absolute;
+    right: 0;
+    top: 0.8rem;
+    padding: 0.4rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.button-complete{
+    margin: 0 6.3rem;
+    background-color: rgb(200, 7, 7);
+}
+
+.button-edit{
+    margin: 0 3.5rem;
+    background-color: rgb(242, 242, 39);
+}
+
+.button-delete{
+    margin: 0 1rem;
+    background-color: aqua;
+}
+
+.task-button i{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.task-button:nth-child(1):hover{
+    background-color: rgba(200, 7, 7, 0.667) ;
+    transition: .4s !important;
+}
+
+.task-button:nth-child(2):hover{
+    background-color: rgba(242, 242, 39,0.667) ;
+    transition: .4s !important;
+}
+
+.task-button:nth-child(3):hover{
+    background-color: rgba(0, 255, 255, 0.667) ;
+    transition: .4s !important;
+}
+
+.complete{
+    text-decoration: line-through;
+    color: gray;
+    transition: .4s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper{
+        width: 100%;
+        border: 1px solid orange;
+        margin: 0 2rem;
+    }
+    form{
+        grid-template-columns: 300px 70px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .wrapper{
+        width: 80%;
+        margin: 0 2rem;
+        
+    }
+    
+    form{
+        grid-template-columns: 250px 60px;
+    }
 }
