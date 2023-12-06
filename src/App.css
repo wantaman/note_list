@@ -30,6 +30,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;  
+
 }
 
 .wrapper{
@@ -39,6 +40,7 @@ body{
     height: 800px;
     padding: var(--mx-1);
     border-radius: 0.5rem;
+    overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -61,6 +63,7 @@ form{
     border-radius: 0.3rem;
     padding: 0.6rem 0.4rem;
     font-size: 1.35rem;
+    width: 90%;
 }
 
 .button-add{
@@ -84,10 +87,9 @@ form{
 .list-item{
     background-color: none;
     width: 95%;
-    padding: 0 0.8rem;
+    padding: 0 27% 0 10px;
     height: auto;
     border-radius: 0.8rem;
-    border: 1px solid white;
     background: #AFDBF5;
     list-style: none;
     margin: 0.7rem auto;
@@ -104,6 +106,9 @@ form{
     position: relative;
     border: none;
     outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
 }
     
 /* width */
@@ -168,6 +173,14 @@ form{
         border: 1px solid orange;
         margin: 0 2rem;
     }
+    .list{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap;
+    }
+    .list-item{
+        padding:0 35% 0 10px ;
+    }
     form{
         grid-template-columns: 300px 70px;
     }
@@ -176,8 +189,16 @@ form{
 @media screen and (max-width: 568px) {
     .wrapper{
         width: 80%;
-        margin: 0 2rem;
+        padding: 0;        
+    }
+    .list{
+        overflow: hidden;
+        text-overflow: ellipsis;
         
+        white-space:nowrap;
+    }
+    .list-item{
+        padding:0 50% 0 10px ;
     }
     
     form{
